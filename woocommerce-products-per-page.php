@@ -27,7 +27,7 @@
  *     along with WordPress. If not, see <http://www.gnu.org/licenses/>.
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if (! defined( 'ABSPATH' )) exit; // Exit if accessed directly
 
 /**
  * Class Woocommerce_Products_Per_Page
@@ -67,12 +67,12 @@ class Woocommerce_Products_Per_Page {
 	 */
 	public function __construct() {
 
-		if ( ! function_exists( 'is_plugin_active_for_network' ) ) :
+		if (! function_exists( 'is_plugin_active_for_network' )) :
 		    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 		endif;
 
-		if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-			if ( ! is_plugin_active_for_network( 'woocommerce/woocommerce.php' ) ) :
+		if (! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )) :
+			if (! is_plugin_active_for_network( 'woocommerce/woocommerce.php' )) :
 				return;
 			endif;
 		endif;
@@ -93,7 +93,7 @@ class Woocommerce_Products_Per_Page {
 	 */
 	public static function instance() {
 
-		if ( is_null( self::$instance ) ) :
+		if (is_null( self::$instance )) :
 			self::$instance = new self();
 		endif;
 
@@ -111,7 +111,7 @@ class Woocommerce_Products_Per_Page {
 	 */
 	public function init() {
 
-		if ( is_admin() ) :
+		if (is_admin()) :
 
 			/**
 			 * Settings
@@ -165,10 +165,10 @@ class Woocommerce_Products_Per_Page {
 	 */
 	public function plugin_update() {
 
-		if ( version_compare( get_option( 'wppp_version', '0' ), $this->version, '<' ) ) :
+		if (version_compare( get_option( 'wppp_version', '0' ), $this->version, '<' )) :
 
 			// Updating to 1.2.0
-			if ( version_compare( get_option( 'wppp_version', '0' ), '1.2.0', '<' ) ) :
+			if (version_compare( get_option( 'wppp_version', '0' ), '1.2.0', '<' )) :
 				$settings = get_option( 'wppp_settings', array() );
 				update_option( 'wppp_dropdown_location', isset( $settings['location'] ) ? $settings['location'] : 'topbottom'  );
 				update_option( 'wppp_dropdown_options', isset( $settings['productsPerPage'] ) ? $settings['productsPerPage'] : null  );
@@ -179,7 +179,7 @@ class Woocommerce_Products_Per_Page {
 			endif;
 
 			// Updating to 1.3.0 - for the future, delete the old settings.
-			if ( version_compare( get_option( 'wppp_version', '0' ), '1.3.0', '<' ) ) :
+			if (version_compare( get_option( 'wppp_version', '0' ), '1.3.0', '<' )) :
 				// delete_option( 'wppp_settings' );
 			endif;
 
@@ -349,7 +349,7 @@ class Woocommerce_Products_Per_Page {
  *
  * @return object Woocommerce_Products_Per_Page class object.
  */
-if ( ! function_exists( 'Woocommerce_Products_Per_Page' ) ) :
+if (! function_exists( 'Woocommerce_Products_Per_Page' )) :
 
  	function Woocommerce_Products_Per_Page() {
 		return Woocommerce_Products_Per_Page::instance();
