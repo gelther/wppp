@@ -19,8 +19,10 @@ class WPPP_Dropdown {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->products_per_page_dropdown()' );
 		return $this->front_end->products_per_page_dropdown();
+
 	}
 
 
@@ -33,8 +35,10 @@ class WPPP_Dropdown {
 	 * @deprecated 1.1.0 Use wppp_dropdown() instead (rename).
 	 */
 	public function wppp_create_object() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->products_per_page_dropdown()' );
 		return $this->front_end->products_per_page_dropdown();
+
 	}
 
 
@@ -48,8 +52,10 @@ class WPPP_Dropdown {
 	 * @global object $wp_query.
 	 */
 	public function wppp_dropdown() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->products_per_page_dropdown()' );
 		return $this->front_end->products_per_page_dropdown();
+
 	}
 
 
