@@ -68,7 +68,7 @@ class Woocommerce_Products_Per_Page {
 	public function __construct() {
 
 		if ( ! function_exists( 'is_plugin_active_for_network' ) ) :
-		    require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 		endif;
 
 		if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
@@ -170,12 +170,12 @@ class Woocommerce_Products_Per_Page {
 			// Updating to 1.2.0
 			if ( version_compare( get_option( 'wppp_version', '0' ), '1.2.0', '<' ) ) :
 				$settings = get_option( 'wppp_settings', array() );
-				update_option( 'wppp_dropdown_location', isset( $settings['location'] ) ? $settings['location'] : 'topbottom'  );
-				update_option( 'wppp_dropdown_options', isset( $settings['productsPerPage'] ) ? $settings['productsPerPage'] : null  );
-				update_option( 'wppp_default_ppp', isset( $settings['default_ppp'] ) ? $settings['default_ppp'] : '12'  );
-				update_option( 'wppp_shop_columns', isset( $settings['shop_columns'] ) ? $settings['shop_columns'] : '4'  );
-				update_option( 'wppp_return_to_first', isset( $settings['behaviour'] ) && '1' == $settings['behaviour'] ? 'yes' : 'no'  );
-				update_option( 'wppp_method', isset( $settings['method'] ) ? $settings['method'] : 'post'  );
+				update_option( 'wppp_dropdown_location', isset( $settings['location'] ) ? $settings['location'] : 'topbottom' );
+				update_option( 'wppp_dropdown_options', isset( $settings['productsPerPage'] ) ? $settings['productsPerPage'] : null );
+				update_option( 'wppp_default_ppp', isset( $settings['default_ppp'] ) ? $settings['default_ppp'] : '12' );
+				update_option( 'wppp_shop_columns', isset( $settings['shop_columns'] ) ? $settings['shop_columns'] : '4' );
+				update_option( 'wppp_return_to_first', isset( $settings['behaviour'] ) && '1' == $settings['behaviour'] ? 'yes' : 'no' );
+				update_option( 'wppp_method', isset( $settings['method'] ) ? $settings['method'] : 'post' );
 			endif;
 
 			// Updating to 1.3.0 - for the future, delete the old settings.
@@ -195,7 +195,9 @@ class Woocommerce_Products_Per_Page {
 	 * @since 1.1.0
 	 */
 	public function wppp_settings_page_menu() {
+
 		return _deprecated_function( array( $this, __FUNCTION__ ), '1.2.0' );
+
 	}
 
 
@@ -209,7 +211,9 @@ class Woocommerce_Products_Per_Page {
 	 * @return int number of columns.
 	 */
 	public function wppp_init_settings() {
+
 		return _deprecated_function( array( $this, __FUNCTION__ ), '1.2.0' );
+
 	}
 
 
@@ -223,7 +227,9 @@ class Woocommerce_Products_Per_Page {
 	 * @return array default settings.
 	 */
 	public function wppp_settings_defaults() {
+
 		return _deprecated_function( array( $this, __FUNCTION__ ), '1.2.0' );
+
 	}
 
 
@@ -237,8 +243,10 @@ class Woocommerce_Products_Per_Page {
 	 * @return int Number of columns.
 	 */
 	public function wppp_loop_shop_columns( $columns ) {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->loop_shop_columns()' );
 		return $this->front_end->loop_shop_columns();
+
 	}
 
 
@@ -252,8 +260,10 @@ class Woocommerce_Products_Per_Page {
 	 * @return int Products per page.
 	 */
 	public function wppp_loop_shop_per_page() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->loop_shop_per_page()' );
 		return $this->front_end->loop_shop_per_page();
+
 	}
 
 
@@ -267,8 +277,10 @@ class Woocommerce_Products_Per_Page {
 	 * @return object Query object
 	 */
 	public function wppp_pre_get_posts( $q, $class ) {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->woocommerce_product_query()' );
 		return $this->front_end->woocommerce_product_query();
+
 	}
 
 
@@ -280,7 +292,9 @@ class Woocommerce_Products_Per_Page {
 	 * @since 1.0.0
 	 */
 	public function wppp_shop_hooks() {
+
 		return _deprecated_function( array( $this, __FUNCTION__ ), '1.2.0' );
+
 	}
 
 
@@ -291,8 +305,10 @@ class Woocommerce_Products_Per_Page {
 	 * @deprecated 1.1.0 Use wppp_dropdown() instead.
 	 */
 	public function wppp_dropdown_object() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.1.0', '$this->wppp_dropdown()' );
 		$this->wppp_dropdown();
+
 	}
 
 
@@ -304,8 +320,10 @@ class Woocommerce_Products_Per_Page {
 	 * @since 1.0.0
 	 */
 	public function wppp_dropdown() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->products_per_page_dropdown()' );
 		return $this->front_end->products_per_page_dropdown();
+
 	}
 
 
@@ -317,8 +335,10 @@ class Woocommerce_Products_Per_Page {
 	 * @since 1.0.0
 	 */
 	public function wppp_set_customer_session() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->set_customer_session()' );
 		return $this->front_end->set_customer_session();
+
 	}
 
 
@@ -330,8 +350,10 @@ class Woocommerce_Products_Per_Page {
 	 * @since 1.1.0
 	 */
 	public function wppp_submit_check() {
+
 		_deprecated_function( array( $this, __FUNCTION__ ), '1.2.0', 'Woocommerce_Products_Per_Page()->front_end->products_per_page_action()' );
 		return $this->front_end->products_per_page_dropdown();
+
 	}
 
 
@@ -351,9 +373,12 @@ class Woocommerce_Products_Per_Page {
  */
 if ( ! function_exists( 'Woocommerce_Products_Per_Page' ) ) :
 
- 	function Woocommerce_Products_Per_Page() {
+	function Woocommerce_Products_Per_Page() {
+
 		return Woocommerce_Products_Per_Page::instance();
+
 	}
+
 
 endif;
 
