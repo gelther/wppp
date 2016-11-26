@@ -1,4 +1,4 @@
-<?PHP
+<?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
@@ -34,8 +34,8 @@ class WPPP_Admin_Settings {
 	 *
 	 * @since 1.2.0
 	 *
-	 * @param 	array $settings List of existing display settings.
-	 * @return	array			List of modified display settings.
+	 * @param  array $settings List of existing display settings.
+	 * @return array           List of modified display settings.
 	 */
 	public function add_settings( $settings ) {
 
